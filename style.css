@@ -1,0 +1,199 @@
+/* 使用する色を定義 */
+:root{
+  --primary: #007bff;
+  --primary-hover: #0044ff;
+}
+
+body{
+  background-color: aliceblue;
+}
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+}
+.item {
+  border-radius: 10px;
+  background: white;
+  /* text-align: center; */
+  box-shadow: 0px 0px 5px #00000044;
+  padding: 0;
+}
+.item.page{
+  padding: 10px;
+  margin: 0px;
+}
+.cardimg {
+  width: 100%;
+  height: 200px;
+  padding: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+}
+h3,h4,p,table {
+  text-align: left;
+  margin: 7px 14px;
+}
+
+button{
+  color: white;
+  background-color: var(--primary);
+  padding: 8px 18px;
+  border: 0 none;
+  border-radius: 5px;
+  margin: 14px;
+  box-shadow: 0px 0px 5px #00000066;
+}
+
+button:hover{
+  background-color: var(--primary-hover);
+}
+
+table{
+  border-radius: 10px;
+  background: white;
+  /* text-align: center; */
+  box-shadow: 0px 0px 5px #00000044;
+  padding: 7px;
+}
+th,td{
+  border-bottom: 1px solid #00000044;
+}
+
+.modalimg{
+  width: 100%;
+}
+
+
+a{
+  text-decoration: none;
+  border-bottom: 2px solid var(--primary);
+}
+/* リンクhoverアニメーション */
+.link-hover,.link-hover:visited{
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  transition:0.5s color ease;
+}
+.link-hover:hover{
+	color: var(--primary);
+}
+.link-hover:before{
+  content: "";
+  transition:0.5s all ease;
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  position:absolute;
+}
+.link-hover:before{
+  top:0;
+}
+.link-hover:before{
+  height:2px;
+  width:0;
+  background: var(--primary);
+}
+.link-border{
+  position:relative;
+  padding-top: 5px;
+}
+.link-border a{
+  padding:0 0.5rem;
+}
+.link-border:before,.link-border:after{
+  content: "";
+  box-sizing:border-box;
+  transition:0.25s all ease;
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  position:absolute;
+  width:2px;
+  height:0;
+  background: var(--primary);
+}
+.link-border:before{
+  left:0;
+  bottom:0;
+}
+.link-border:after{
+  right:0;
+  top:0;
+}
+.link-border .link-hover:before{
+  left:0;
+  transition:0.25s all ease;
+}
+.link-border:hover:before,.link-border:hover:after{
+  height:100%;
+}
+.link-border:hover .link-hover:before{
+  width:100%;
+}
+
+
+
+/* モーダル */
+.modal{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.modal:not(:target) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+.modal:target{
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+.modal .overlay{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #000;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+}
+.modal-wrapper{
+  width: 100%;
+  max-width: 400px;
+  min-width: 400px;
+  height: 100%;
+  max-height: 600px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-contents{
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+.modal-content{
+  margin: 25px;
+}
+.modal-close{
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 25px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  text-decoration: none;
+  border: 2px solid var(--primary);
+  border-radius: 25px;
+  padding: 0px 3px 4px 3px;
+  background-color: white;
+}
