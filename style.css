@@ -35,7 +35,6 @@ h3,h4,p,table {
   text-align: left;
   margin: 7px 14px;
 }
-
 button{
   color: white;
   background-color: var(--primary);
@@ -45,11 +44,9 @@ button{
   margin: 14px;
   box-shadow: 0px 0px 5px #00000066;
 }
-
 button:hover{
   background-color: var(--primary-hover);
 }
-
 table{
   border-radius: 10px;
   background: white;
@@ -59,18 +56,18 @@ table{
 }
 th,td{
   border-bottom: 1px solid #00000044;
+  white-space: nowrap;
+}
+.scroll{
+
+  overflow-x: auto;
 }
 
-.modalimg{
-  width: 100%;
-}
-
-
+/* リンクhoverアニメーション */
 a{
   text-decoration: none;
   border-bottom: 2px solid var(--primary);
 }
-/* リンクhoverアニメーション */
 .link-hover,.link-hover:visited{
   -webkit-backface-visibility:hidden;
           backface-visibility:hidden;
@@ -131,9 +128,10 @@ a{
   width:100%;
 }
 
-
-
 /* モーダル */
+.modalimg{
+  width: 100%;
+}
 .modal{
   width: 100%;
   height: 100%;
