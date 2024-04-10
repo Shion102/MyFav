@@ -6,11 +6,16 @@
 
 body{
   background-color: aliceblue;
+
 }
 .grid {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+}
+.main{
+  max-width: 800px;
+  margin:  0 auto;
 }
 .item {
   border-radius: 10px;
